@@ -1,0 +1,127 @@
+¡Claro! Aquí tienes una explicación línea por línea del programa:
+
+1. `import random`: Importa el módulo `random` que proporciona funciones para generar números aleatorios.
+
+3. `AHORCADO = [''' ... =========''']`: Crea una lista llamada `AHORCADO` que contiene representaciones visuales del juego del ahorcado en diferentes etapas. Cada elemento de la lista es una cadena de caracteres que representa una etapa del dibujo del ahorcado.
+
+5. `palabras = 'theboyz bts straykids fiftyfifty blackpink seventeen aespa twice nct redvelvet itzy exo ateez enhypen'.split()`: Crea una lista llamada `palabras` que contiene diferentes palabras relacionadas con grupos de música K-pop. La cadena de texto se divide utilizando el método `split()` para separar las palabras en elementos individuales de la lista.
+
+7. `def buscarPalabraAleat(listaPalabras):`: Define una función llamada `buscarPalabraAleat` que toma una lista de palabras como argumento.
+
+8. `palabraAleatoria = random.randint(0, len(listaPalabras) - 1)`: Genera un número aleatorio entre 0 y la longitud de la lista de palabras menos 1. Este número se utiliza como índice para seleccionar una palabra aleatoria de la lista.
+
+9. `return listaPalabras[palabraAleatoria]`: Devuelve la palabra aleatoria seleccionada.
+
+11. `def displayBoard(AHORCADO, letraIncorrecta, letraCorrecta, palabraSecreta):`: Define una función llamada `displayBoard` que muestra el estado actual del juego.
+
+12. `print(AHORCADO[len(letraIncorrecta)])`: Imprime la representación visual del ahorcado correspondiente al número de letras incorrectas que ha adivinado el jugador.
+
+13. `print("")`: Imprime una línea vacía.
+
+14. `fin = " "`: Crea una variable llamada `fin` y le asigna un espacio en blanco.
+
+15. `print('Letras incorrectas:', fin)`: Imprime "Letras incorrectas:" seguido de un espacio en blanco.
+
+16. `for letra in letraIncorrecta:`: Itera sobre cada letra en la lista `letraIncorrecta`.
+
+17. `print(letra, fin)`: Imprime cada letra seguida de un espacio en blanco.
+
+18. `print("")`: Imprime una línea vacía.
+
+19. `espacio = '_' * len(palabraSecreta)`: Crea una cadena de caracteres que consiste en un guion bajo repetido la misma cantidad de veces que la longitud de la palabra secreta.
+
+20. `for i in range(len(palabraSecreta)):`: Itera sobre cada índice en el rango de la longitud de la palabra secreta.
+
+21. `if palabraSecreta[i] in letraCorrecta:`: Verifica si la letra en la posición actual de la palabra secreta está en la lista `letraCorrecta`.
+
+22. `espacio = espacio[:i] + palabraSecreta[i] + espacio[i+1:]`: Actualiza la cadena `espacio` reemplazando el guion bajo en la posición actual con la letra correcta adivinada.
+
+23. `for letra in espacio:`: Itera sobre cada letra en la cadena `espacio`.
+
+24. `print(letra, fin)`: Imprime cada letra seguida de un espacio en blanco.
+
+26. `def elijeLetra(alguna
+
+Disculpa por la interrupción. Aquí tienes la continuación de la explicación del programa:
+
+26. `def elijeLetra(algunaLetra):`: Define una función llamada `elijeLetra` que toma una lista de letras como argumento.
+
+27. `while True:`: Inicia un bucle infinito.
+
+28. `print('Adivina una letra:')`: Imprime "Adivina una letra:" para solicitar al jugador que adivine una letra.
+
+29. `letra = input()`: Lee la entrada del jugador desde la consola y la asigna a la variable `letra`.
+
+30. `letra = letra.lower()`: Convierte la letra ingresada a minúscula, independientemente de si se ingresó en mayúscula o minúscula.
+
+31. `if len(letra) != 1:`: Verifica si la longitud de la letra ingresada no es igual a 1.
+
+32. `print('Introduce una sola letra.')`: Imprime "Introduce una sola letra." para informar al jugador que solo se debe ingresar una letra.
+
+34. `elif letra in algunaLetra:`: Verifica si la letra ingresada ya ha sido elegida anteriormente (está presente en la lista `algunaLetra`).
+
+35. `print('Ya has elegido esa letra ¿Qué tal si pruebas con otra?')`: Imprime "Ya has elegido esa letra ¿Qué tal si pruebas con otra?" para indicar al jugador que intente con una letra diferente.
+
+37. `elif letra not in 'abcdefghijklmnopqrstuvwxyz':`: Verifica si la letra ingresada no es una letra del alfabeto en minúscula.
+
+38. `print('Elije una letra.')`: Imprime "Elije una letra." para indicar al jugador que debe seleccionar una letra válida.
+
+40. `return letra`: Devuelve la letra ingresada por el jugador.
+
+42. `def empezar():`: Define una función llamada `empezar` que solicita al jugador si desea volver a jugar.
+
+43. `print('Quieres jugar de nuevo? (Si o No)')`: Imprime "Quieres jugar de nuevo? (Si o No)" para preguntar al jugador si desea reiniciar el juego.
+
+44. `return input().lower().startswith('s')`: Lee la entrada del jugador desde la consola, la convierte a minúscula y verifica si comienza con la letra 's'. Devuelve `True` si la respuesta comienza con 's' (indicando que el jugador quiere volver a jugar) y `False` en caso contrario.
+
+46. `print('A H O R C A D O')`: Imprime "A H O R C A D O" para mostrar el título del juego.
+
+47. `letraIncorrecta = ""`: Crea una variable llamada `letraIncorrecta` y la inicializa como una cadena vacía.
+
+48. `letraCorrecta = ""`: Crea una variable llamada `letraCorrecta` y la inicializa como una cadena vacía.
+
+49. `palabraSecreta = buscarPalabraAleat(palabras)`: Asigna a `palabraSecreta` el resultado de llamar a la función `buscarPalabraAleat` con la lista de palabras `palabras` como argumento. Esto elige una palabra aleatoria de la lista.
+
+50. `finJuego = False`: Crea una variable llamada `finJuego` y la inicializa como `False`.
+
+51. `while True:`: Inicia
+
+Disculpa por la interrupción nuevamente. Aquí tienes la continuación y finalización de la explicación del programa:
+
+51. `while True:`: Inicia un bucle infinito.
+
+52. `displayBoard(AHORCADO, letraIncorrecta, letraCorrecta, palabraSecreta)`: Llama a la función `displayBoard` para mostrar el estado actual del juego, pasando las variables relevantes como argumentos.
+
+53. `letra = elijeLetra(letraIncorrecta + letraCorrecta)`: Llama a la función `elijeLetra` para que el jugador adivine una letra, pasando la concatenación de las letras incorrectas y las letras correctas como argumento.
+
+54. `if letra in palabraSecreta:`: Verifica si la letra adivinada por el jugador está presente en la palabra secreta.
+
+55. `letraCorrecta = letraCorrecta + letra`: Agrega la letra adivinada a la variable `letraCorrecta`.
+
+57. `letrasEncontradas = True`: Crea una variable `letrasEncontradas` y la inicializa como `True`.
+
+58. `for i in range(len(palabraSecreta)):`: Itera sobre cada índice en el rango de la longitud de la palabra secreta.
+
+59. `if palabraSecreta[i] not in letraCorrecta:`: Verifica si la letra en la posición actual de la palabra secreta no está en la lista `letraCorrecta`.
+
+60. `letrasEncontradas = False`: Establece `letrasEncontradas` como `False` si una letra no ha sido encontrada en la palabra secreta.
+
+62. `if letrasEncontradas:`: Verifica si todas las letras de la palabra secreta han sido encontradas por el jugador.
+
+63. `print('¡Muy bien! La palabra secreta es "' + palabraSecreta + '"! ¡Has ganado!')`: Imprime un mensaje felicitando al jugador por adivinar correctamente la palabra secreta.
+
+64. `finJuego = True`: Establece `finJuego` como `True` para finalizar el juego.
+
+67. `letraIncorrecta = letraIncorrecta + letra`: Agrega la letra adivinada a la variable `letraIncorrecta`.
+
+70. `if len(letraIncorrecta) == len(AHORCADO) - 1:`: Verifica si el número de letras incorrectas es igual a la longitud de la representación visual del ahorcado menos 1. Esto significa que el jugador ha adivinado letras incorrectas suficientes para perder el juego.
+
+71. `displayBoard(AHORCADO, letraIncorrecta, letraCorrecta, palabraSecreta)`: Llama a la función `displayBoard` para mostrar el estado final del juego.
+
+72. `print('¡Se ha quedado sin letras!\nDespués de ' + str(len(letraIncorrecta)) + ' letras erróneas y ' + str(len(letraCorrecta)) + ' letras correctas, la palabra era "' + palabraSecreta + '"')`: Imprime un mensaje informando al jugador que se ha quedado sin letras y muestra la cantidad de letras incorrectas, letras correctas y la palabra secreta.
+
+73. `finJuego = True`: Establece `finJuego` como `True` para finalizar el juego.
+
+76. `if finJuego:`: Verifica si el juego ha finalizado.
+
+77. `if empezar():`: Verifica si el jugador desea jugar nuevamente
